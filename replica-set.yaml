@@ -1,0 +1,15 @@
+apiVersion: servicecatalog.k8s.io/v1beta1
+kind: ServiceInstance
+metadata:
+  name: my-atlas-cluster
+  namespace: atlas
+spec:
+  serviceClassExternalName: mongodb-atlas-aws
+  servicePlanExternalName: M30
+  parameters:
+    cluster:
+      providerSettings:
+        regionName: US_WEST_2
+      autoscaling:
+        diskGBEnabled: false
+      backupEnabled: true
